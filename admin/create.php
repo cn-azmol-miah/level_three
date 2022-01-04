@@ -16,11 +16,12 @@ if (isset($_POST["submit"])) {
 
     $title = $_POST['title'];
     $description = $_POST['description'];
+    $details = $_POST['details'];
     $price = $_POST['price'];
     $cat_id = intval($_POST['cat_id']);
 
 
-    $query = "INSERT INTO products(title, image, price, cat_id, description) VALUES('$title', '$imagePath', '$price', '$cat_id', '$description')";
+    $query = "INSERT INTO products(title, image, price, cat_id, description, details) VALUES('$title', '$imagePath', '$price', '$cat_id', '$description', '$details')";
 
     if (mysqli_multi_query($conn, $query)) {
         $sql_query = $query;
@@ -76,7 +77,7 @@ $categories = mysqli_fetch_all($cat_result, MYSQLI_ASSOC);
 </div> -->
 
 <!-- Create Product Form -->
-<form method="POST" action="<?php $_SERVER['PHP_SELF']; ?>?title=title" enctype="multipart/form-data">
+<form id="product_form" method="POST" action="<?php $_SERVER['PHP_SELF']; ?>?title=title" enctype="multipart/form-data">
     <div class="form-group mb-2">
         <label>Product Image</label>
         <input id="image" type="file" name="image" class="form-control">
@@ -88,6 +89,10 @@ $categories = mysqli_fetch_all($cat_result, MYSQLI_ASSOC);
     <div class="form-group mb-2">
         <label>Product Description</label>
         <textarea id="description" type="text" name="description" class="form-control"></textarea>
+    </div>
+    <div class="form-group mb-2">
+        <label>Product Details</label>
+        <textarea id="details" type="text" name="details" class="form-control"></textarea>
     </div>
     <div class="form-group mb-2">
         <label>Product Price</label>

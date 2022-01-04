@@ -17,11 +17,12 @@ if (isset($_POST["submit"])) {
 
     $title = $_POST['title'];
     $description = $_POST['description'];
+    $details = $_POST['details'];
     $price = $_POST['price'];
     $cat_id = intval($_POST['cat_id']);
     $update_id = $_POST['update_id'];
 
-    $query = "UPDATE products SET image='$imagePath', title='$title', description='$description', price='$price', cat_id='$cat_id' WHERE id = {$update_id}";
+    $query = "UPDATE products SET image='$imagePath', title='$title', description='$description', details='$details', price='$price', cat_id='$cat_id' WHERE id = {$update_id}";
 
     // Dump query just incase SQL query injection is incorrect
     //var_dump($query);
@@ -89,6 +90,10 @@ mysqli_close($conn);
     <div class="form-group mb-2">
         <label>Product Description</label>
         <textarea type="text" name="description" class="form-control"><?php echo $product['description']; ?></textarea>
+    </div>
+    <div class="form-group mb-2">
+        <label>Product Details</label>
+        <textarea type="text" name="details" class="form-control"><?php echo $product['details']; ?></textarea>
     </div>
     <div class="form-group mb-2">
         <label>Product Price</label>
