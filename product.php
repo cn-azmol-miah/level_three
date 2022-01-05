@@ -28,7 +28,7 @@ if (isset($_POST["review_submit"])) {
 }
 
 // Get reviews
-$reviews_query = "SELECT * FROM reviews WHERE customer_id = $customer_id";
+$reviews_query = "SELECT * FROM reviews WHERE product_id = $id";
 $reviews_result = mysqli_query($conn, $reviews_query);
 $reviews = mysqli_fetch_all($reviews_result, MYSQLI_ASSOC);
 
