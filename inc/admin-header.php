@@ -3,13 +3,17 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Codenation Vulnerable Shop</title>
+    <title>Codenation Level Three</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="shortcut icon" href="../images/favicon.ico" type="image/ico">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
     <script src="https://cdn.jsdelivr.net/npm/shepherd.js@5.0.1/dist/js/shepherd.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <!-- include summernote css/js -->
+    <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.js"></script>
 </head>
 
 <body style="padding-bottom: 3rem;">
@@ -19,7 +23,7 @@
             <a href="<?php echo ROOT_URL; ?>" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
 
                 <?php echo '<img src="../images/long_logo.png" alt="" style="height: 35px;"> '; ?>
-                <h3 class="d-inline mt-2"> Shop </h3>
+                <h3 class="d-inline mt-2"> Level Three </h3>
             </a>
 
             <ul class="nav nav-pills">
@@ -29,6 +33,6 @@
                 <?php else : ?>
                     <li class="nav-item"><a href="index.php" class="nav-link">Login</a></li>
                 <?php endif; ?>
-                <li class="nav-item"><a href="../docs.php" class="btn btn-outline-primary"><i class="fas fa-file-alt"></i> Docs</a></li>
+                <li class="nav-item"><a href="<?php echo ROOT_URL; ?>docs" class="btn btn-outline-primary"><i class="fas fa-file-alt"></i> Docs</a></li>
             </ul>
         </nav>
